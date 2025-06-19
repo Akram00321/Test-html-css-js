@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="map.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="dashboard">
+    <div class="header">
+      <h2>Dashboard</h2>
+    </div>
+
+    <div class="content">
+      <div class="charts">
+        <canvas id="barChart"></canvas>
+        <canvas id="pieChart"></canvas>
+      </div>
+
+      <div class="map">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=77.5,12.9,78.0,13.2&layer=mapnik"
+          style="width: 75%; height: 75%; border: none;">
+        </iframe>
+      </div>
+
+      <div class="cards">
+        <div class="card purple">
+          <p>Key Card</p>
+          <h3>39.30</h3>
+          <small>Line 1 Text</small>
+        </div>
+        <div class="card red">
+          <p>Key Card</p>
+          <h3>66.45</h3>
+          <small>Line 2 Text</small>
+        </div>
+        <div class="card blue">
+          <p>Key Card</p>
+          <h3>25.03</h3>
+          <small>Line 3 Text</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="map.js"></script>
+</body>
+</html>
