@@ -5,19 +5,33 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     const password = document.getElementById('password').value.trim();
     const message = document.getElementById('message');
 
+   
+    message.style.color = 'red';
+
+ 
     if (username === '' || password === '') {
-        message.style.color = 'red';
         message.textContent = 'Both fields are required!';
+    } else if (username.length < 4) {
+        message.textContent = 'Username must be at least 4 characters.';
+    } else if (password.length < 6) {
+        message.textContent = 'Password must be at least 6 characters.';
+    } else if (!/\d/.test(password)) {
+        message.textContent = 'Password must contain at least one number.';
     } else {
-        message.textContent = '';
-        // Simulate successful login and redirect to dashboard
-        window.location.href = 'map.html';
+        message.style.color = 'green';
+        message.textContent = 'Successfully logged in!';
+
+        setTimeout(() => {
+            window.location.href = 'map.html';
+        }, 10);
     }
 });
 
 function clearForm() {
     document.getElementById('loginForm').reset();
-    document.getElementById('message').textContent = '';
+    const message = document.getElementById('message');
+    message.textContent = '';
+    message.style.color = 'red';
 }
 
 function forgotPassword() {
